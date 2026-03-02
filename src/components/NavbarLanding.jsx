@@ -12,7 +12,7 @@ export default function NavbarLanding() {
   return (
     <header
       className={`fixed top-0 w-full z-50 transition ${
-        scrolled ? "bg-white/80 backdrop-blur-md shadow-sm" : "bg-transparent"
+        scrolled ? "bg-white/40 backdrop-blur-md shadow-sm" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">

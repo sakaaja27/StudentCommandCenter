@@ -7,3 +7,6 @@
 html {
   scroll-behavior: smooth;
 }
+body {
+  font-feature-settings: "ss01", "ss02";
+}

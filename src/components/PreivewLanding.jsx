@@ -32,13 +32,16 @@ export default function PreviewLanding() {
       >
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold">A Dashboard Built for Clarity</h2>
+          <div className="mt-16 relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-200 to-purple-200 blur-2xl opacity-40 rounded-3xl"></div>
 
-          <div className="mt-16 rounded-3xl shadow-2xl overflow-hidden border">
-            <img
-              src="https://via.placeholder.com/1200x600"
-              alt="Dashboard Preview"
-              className="w-full"
-            />
+            <div className="relative rounded-3xl shadow-2xl overflow-hidden border bg-white transform hover:scale-[1.02] transition duration-500">
+              <img
+                src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Dashboard Preview"
+                className="w-full h-auto object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>

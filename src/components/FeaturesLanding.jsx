@@ -37,7 +37,7 @@ export default function FeaturesLanding() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="p-8 rounded-2xl bg-gray-50 hover:shadow-lg transition"
+              className="p-8 rounded-2xl bg-gray-50 hover:shadow-lg transition border border-gray-300"
             >
               <h3 className="font-semibold text-lg">{feature.title}</h3>
               <p className="mt-3 text-sm text-gray-600">
