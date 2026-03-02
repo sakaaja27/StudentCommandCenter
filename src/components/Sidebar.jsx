@@ -30,8 +30,8 @@ export default function Sidebar() {
       </button>
 
       <aside
-        className={`fixed inset-y-0 left-0 w-64 bg-white shadow-lg transform transition-transform duration-200 ease-in-out
-          ${open ? "translate-x-0" : "-translate-x-full"} md:translate-x-0 md:static md:block`}
+        className={`fixed inset-y-0 left-0 w-64 h-screen bg-white shadow-lg transform transition-transform duration-200 ease-in-out
+          ${open ? "translate-x-0" : "-translate-x-full"} md:translate-x-0 md:static md:block md:h-auto md:min-h-full`}
       >
         <div className="p-6 text-xl font-bold text-gray-800 border-b">
           Command Center
