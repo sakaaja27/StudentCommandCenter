@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import NavbarLanding from "../components/NavbarLanding";
+import FeaturesLanding from "../components/FeaturesLanding";
 export default function Landing() {
 
   return (
@@ -11,7 +12,7 @@ export default function Landing() {
         </h1>
 
         <p className="mt-6 text-lg text-gray-600 max-w-2xl">
-          Organize tasks, track goals, and boost academic performance — all in
+          Organize tasks, track goals, and boost academic performance all in
           one intelligent dashboard.
         </p>
 
@@ -28,6 +29,7 @@ export default function Landing() {
           </button>
         </div>
       </section>
+      <FeaturesLanding/>
     </div>
   );
 }
