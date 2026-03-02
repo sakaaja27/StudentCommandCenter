@@ -1,20 +1,49 @@
+import { Outlet, useLocation } from "react-router-dom"
+import Sidebar from "../components/Sidebar"
+import Navbar from "../components/Navbar"
+
 export default function Dashboard() {
+  const location = useLocation()
+
+  const menuItems = [
+    { path: "/dashboard/overview", label: "Overview" },
+    { path: "/dashboard/study-planner", label: "Study Planner" },
+    { path: "/dashboard/task-tracker", label: "Task Tracker" },
+    { path: "/dashboard/productivity-insights", label: "Productivity Insights" },
+  ]
+
+  const metaByPath = {
+    "/dashboard/overview": {
+      title: "Overview",
+      subtitle: "Ringkasan cepat aktivitas belajar.",
+    },
+    "/dashboard/study-planner": {
+      title: "Study Planner",
+      subtitle: "Kelola deadline dengan simpel.",
+    },
+    "/dashboard/task-tracker": {
+      title: "Task Tracker",
+      subtitle: "Track task dan progress otomatis.",
+    },
+    "/dashboard/productivity-insights": {
+      title: "Productivity Insights",
+      subtitle: "Insight mingguan berbasis chart.",
+    },
+  }
+
+  const currentMeta = metaByPath[location.pathname] ?? metaByPath["/dashboard/overview"]
+
   return (
-    <main className="p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div className="bg-white p-6 rounded-xl shadow">
-        <h2 className="text-gray-600 text-sm">Total Tasks</h2>
-        <p className="text-3xl font-bold mt-2">12</p>
-      </div>
+    <div className="flex min-h-screen w-full bg-gray-50">
+      <Sidebar menuItems={menuItems} />
 
-      <div className="bg-white p-6 rounded-xl shadow">
-        <h2 className="text-gray-600 text-sm">Completed</h2>
-        <p className="text-3xl font-bold mt-2">8</p>
-      </div>
+      <div className="flex-1 flex flex-col">
+        <Navbar title={currentMeta.title} subtitle={currentMeta.subtitle} />
 
-      <div className="bg-white p-6 rounded-xl shadow">
-        <h2 className="text-gray-600 text-sm">Focus Hours</h2>
-        <p className="text-3xl font-bold mt-2">24h</p>
+        <main className="p-6">
+          <Outlet />
+        </main>
       </div>
-    </main>
-  );
+    </div>
+  )
 }
