@@ -53,7 +53,7 @@ export default function TaskManagerProgress() {
     <section className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gray-100">
       <div className="mb-5 flex items-center justify-between">
         <div>
-          <h2 className="text-lg font-semibold text-gray-800">Task Manager + Progress</h2>
+          <h2 className="text-lg font-semibold text-gray-800">Task Manager</h2>
           <p className="text-sm text-gray-500">Track task harian dan progres otomatis.</p>
         </div>
         <span className="rounded-lg bg-blue-50 px-3 py-1 text-sm font-medium text-blue-700">{progress}%</span>
