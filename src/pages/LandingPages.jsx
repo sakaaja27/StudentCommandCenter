@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import NavbarLanding from "../components/NavbarLanding";
 import FeaturesLanding from "../components/FeaturesLanding";
+import PreviewLanding from "../components/PreivewLanding";
+import Cta from "../components/Cta";
 export default function Landing() {
 
   return (
@@ -30,6 +32,8 @@ export default function Landing() {
         </div>
       </section>
       <FeaturesLanding/>
+      <PreviewLanding/>
+      <Cta/>
     </div>
   );
 }

@@ -16,7 +16,9 @@ export default function NavbarLanding() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <h1 className="font-bold text-xl">StudentCC</h1>
+        <h1 className="font-bold text-xl tracking-tight">
+          Aether<span className="text-blue-900">Flow</span>
+        </h1>
 
         <div className="hidden md:flex gap-8 text-sm text-gray-600">
           <a href="#features" className="hover:text-black transition">
