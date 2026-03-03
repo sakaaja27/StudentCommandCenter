@@ -49,7 +49,7 @@ export default function DashboardOverviewPage() {
     <div className="space-y-4">
       <section className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {quickStats.map((item) => (
-          <article key={item.label} className="rounded-2xl bg-white p-5 ring-1 ring-gray-100">
+          <article key={item.label} className="rounded-2xl bg-white p-5 ring-1 ring-gray-200">
             <p className="text-sm text-gray-500">{item.label}</p>
             <p className="mt-2 text-2xl font-semibold text-gray-800">{item.value}</p>
           </article>
@@ -57,7 +57,7 @@ export default function DashboardOverviewPage() {
       </section>
 
       <section className="grid grid-cols-1 gap-4 xl:grid-cols-[1.2fr_1fr]">
-        <article className="rounded-2xl bg-white p-5 ring-1 ring-gray-100">
+        <article className="rounded-2xl bg-white p-5 ring-1 ring-gray-200">
           <h3 className="text-sm font-semibold text-gray-800">Quick Notes</h3>
           <p className="mt-2 text-sm text-gray-600">
             {metrics.nearestDeadline
@@ -66,7 +66,7 @@ export default function DashboardOverviewPage() {
           </p>
         </article>
 
-        <article className="rounded-2xl bg-white p-5 ring-1 ring-gray-100">
+        <article className="rounded-2xl bg-white p-5 ring-1 ring-gray-200">
           <h3 className="text-sm font-semibold text-gray-800">Today Checklist</h3>
           <ul className="mt-2 space-y-1 text-sm text-gray-600">
             {todayChecklist.map((item) => (

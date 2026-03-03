@@ -50,7 +50,7 @@ export default function TaskManagerProgress() {
   }
 
   return (
-    <section className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gray-100">
+    <section className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gray-200">
       <div className="mb-5 flex items-center justify-between">
         <div>
           <h2 className="text-lg font-semibold text-gray-800">Task Manager</h2>

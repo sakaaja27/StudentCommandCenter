@@ -33,15 +33,15 @@ export default function StudyPlannerPage() {
   return (
     <div className="space-y-4">
       <section className="grid grid-cols-1 gap-4 md:grid-cols-3">
-        <article className="rounded-2xl bg-white p-4 ring-1 ring-gray-100">
+        <article className="rounded-2xl bg-white p-4 ring-1 ring-gray-200">
           <p className="text-xs text-gray-500">Total Deadline</p>
           <p className="mt-1 text-2xl font-semibold text-gray-800">{plannerSummary.total}</p>
         </article>
-        <article className="rounded-2xl bg-white p-4 ring-1 ring-gray-100">
+        <article className="rounded-2xl bg-white p-4 ring-1 ring-gray-200">
           <p className="text-xs text-gray-500">Upcoming</p>
           <p className="mt-1 text-2xl font-semibold text-gray-800">{plannerSummary.upcomingCount}</p>
         </article>
-        <article className="rounded-2xl bg-white p-4 ring-1 ring-gray-100">
+        <article className="rounded-2xl bg-white p-4 ring-1 ring-gray-200">
           <p className="text-xs text-gray-500">Nearest</p>
           <p className="mt-1 text-sm font-semibold text-gray-800">
             {plannerSummary.nearest ? format(parseISO(plannerSummary.nearest.deadline), "dd MMM yyyy") : "-"}
@@ -49,7 +49,7 @@ export default function StudyPlannerPage() {
         </article>
       </section>
 
-      <section className="rounded-2xl bg-white p-5 ring-1 ring-gray-100">
+      <section className="rounded-2xl bg-white p-5 ring-1 ring-gray-200">
         <h2 className="text-sm font-semibold text-gray-800">Planner Guide</h2>
         <ul className="mt-2 space-y-1 text-sm text-gray-600">
           {plannerTips.map((item) => (

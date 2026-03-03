@@ -50,10 +50,10 @@ export default function Sidebar({ menuItems }) {
   }, [])
 
   return (
-    <aside className="sticky top-0 hidden h-screen w-64 border-r border-gray-100 bg-white md:flex md:flex-col">
+    <aside className="sticky top-0 hidden h-screen w-64 border-r border-gray-200 bg-white md:flex md:flex-col">
       <div className="p-6 pb-4">
         <p className="text-xs font-semibold uppercase tracking-wider text-blue-600">Student Command</p>
-        <p className="mt-1 text-xl font-bold text-gray-800">Command Center</p>
+        <p className="mt-1 text-xl font-bold text-gray-800">AtherFLow</p>
       </div>
 
       <nav className="mt-2 flex-1">

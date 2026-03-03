@@ -75,7 +75,7 @@ export default function SmartStudyPlanner() {
   }
 
   return (
-    <section className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gray-100">
+    <section className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gray-200">
       <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
         <div>
           <h2 className="text-lg font-semibold text-gray-800">Smart Study Planner</h2>
@@ -141,8 +141,8 @@ export default function SmartStudyPlanner() {
                 <div
                   key={dateKey}
                   className={`min-h-20 rounded-xl border p-2 text-xs transition ${
-                    isSameMonth(day, monthCursor) ? "bg-white" : "bg-gray-50 text-gray-400"
-                  } ${hasDeadline ? "border-red-200 bg-red-50" : "border-gray-100"}`}
+                    isSameMonth(day, monthCursor) ? "bg-white" : "bg-gray-100 text-gray-400"
+                  } ${hasDeadline ? "border-red-200 bg-red-50" : "border-gray-200"}`}
                 >
                   <div className="flex items-center justify-between">
                     <span className={`font-semibold ${isSameDay(day, new Date()) ? "text-blue-600" : "text-gray-700"}`}>
@@ -161,7 +161,7 @@ export default function SmartStudyPlanner() {
           </div>
         </div>
 
-        <aside className="rounded-xl border border-gray-100 bg-gray-50 p-4">
+        <aside className="rounded-xl border border-gray-200 bg-gray-50 p-4">
           <h3 className="text-sm font-semibold text-gray-800">Next 3 Deadlines</h3>
           <div className="mt-3 space-y-2">
             {upcomingTasks.length === 0 && <p className="text-sm text-gray-500">Belum ada deadline yang akan datang.</p>}

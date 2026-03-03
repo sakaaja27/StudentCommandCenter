@@ -7,7 +7,7 @@ export default function Navbar({ title, subtitle }) {
   })
 
   return (
-    <header className="sticky top-0 z-10 h-16 border-b border-gray-100 bg-white/90 px-6 backdrop-blur">
+    <header className="sticky top-0 z-10 h-16 border-b border-gray-200 bg-white/90 px-6 backdrop-blur">
       <div className="flex h-full items-center justify-between">
         <div>
           <p className="text-xs font-medium uppercase tracking-wide text-gray-400">Dashboard</p>
