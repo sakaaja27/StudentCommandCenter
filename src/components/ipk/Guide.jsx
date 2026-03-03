@@ -9,7 +9,7 @@ export default function GuideCard() {
         <li>• Masukkan total semester program studi Anda.</li>
         <li>• Isi IP setiap semester yang sudah ditempuh.</li>
         <li>• Tentukan target IPK akhir yang ingin dicapai.</li>
-        <li>• Gunakan slider untuk simulasi semester berikutnya.</li>
+        <li>• Gunakan slider untuk prediksi IP semester berikutnya.</li>
         <li>• Perhatikan proyeksi dan rata-rata yang dibutuhkan.</li>
       </ul>
     </div>
