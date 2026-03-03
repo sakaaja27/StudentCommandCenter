@@ -1,6 +1,7 @@
 export const STORAGE_KEYS = {
   deadlines: "scc-study-deadlines",
   tasks: "scc-task-manager",
+  ipkPlanner: "scc-ipk-planner", 
 }
 
 const UPDATE_EVENT = "scc:data-updated"

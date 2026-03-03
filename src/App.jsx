@@ -5,6 +5,7 @@ import DashboardOverviewPage from "./pages/dashboard/DashboardOverviewPage"
 import StudyPlannerPage from "./pages/dashboard/StudyPlannerPage"
 import TaskTrackerPage from "./pages/dashboard/TaskTrackerPage"
 import ProductivityInsightsPage from "./pages/dashboard/ProductivityInsightsPage"
+import IpkTargetPage from "./pages/dashboard/IpkTargetPage"
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
           <Route path="study-planner" element={<StudyPlannerPage />} />
           <Route path="task-tracker" element={<TaskTrackerPage />} />
           <Route path="productivity-insights" element={<ProductivityInsightsPage />} />
+          <Route path="IPK-Target" element={<IpkTargetPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

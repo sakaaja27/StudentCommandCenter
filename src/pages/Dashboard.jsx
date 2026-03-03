@@ -10,6 +10,7 @@ export default function Dashboard() {
     { path: "/dashboard/study-planner", label: "Study Planner" },
     { path: "/dashboard/task-tracker", label: "Task Tracker" },
     { path: "/dashboard/productivity-insights", label: "Productivity Insights" },
+    { path: "/dashboard/IPK-Target", label: "IPK Target" },
   ]
 
   const metaByPath = {
@@ -28,6 +29,10 @@ export default function Dashboard() {
     "/dashboard/productivity-insights": {
       title: "Productivity Insights",
       subtitle: "Insight mingguan berbasis chart.",
+    },
+    "/dashboard/IPK-Target": {
+      title: "IPK Target",
+      subtitle: "Kelola target IPK dengan mudah.",
     },
   }
 
