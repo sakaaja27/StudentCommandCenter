@@ -12,7 +12,7 @@ export default function FocusMode() {
         <GuideFocusCard/>
         <ActionPlan sessionCount={sessionCount}/>
       </div>
-      <PomodoTimer/>
+      <PomodoTimer sessionCount={sessionCount} setSessionCount={setSessionCount}/>
     </div>
   );
 }

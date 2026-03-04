@@ -1,9 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { DURASI_DEFAULT, formatTime } from "../../utils/PomodoroUtils";
-export default function PomodoTimer() {
+export default function PomodoTimer({sessionCount = 0, setSessionCount}) {
   const [waktu, setWaktu] = useState(DURASI_DEFAULT);
   const [aktif, setAktif] = useState(false);
-  const [sessionCount, setSessionCount] = useState(0);
 
   const intervalRef = useRef(null);
 
@@ -21,11 +20,12 @@ export default function PomodoTimer() {
 
   useEffect(()  => {
     if (waktu === 0 && aktif) {
+        typeof setSessionCount === "function" &&
         setSessionCount((s) => s +1);
         setAktif(false);
         setWaktu(DURASI_DEFAULT);
     }
-  }, [waktu, aktif])
+  }, [waktu, aktif, setSessionCount])
 
   const start = () => setAktif(true);
   const pause = () => setAktif(false);
