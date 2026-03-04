@@ -1,32 +1,18 @@
+import ActionPlan from "../../components/focus/ActionPlan";
+import GuideFocusCard from "../../components/focus/GuideFocusCard";
+import PomodoTimer from "../../components/focus/PomodoTimer";
+import { useState } from "react";
+
 export default function FocusMode() {
+  const [sessionCount, setSessionCount] = useState(0);
+
   return (
-    <div class="btn-group-vertical" role="group" aria-label="">
-      <button type="button" class="btn btn-secondary">
-        First One
-      </button>
-      <button type="button" class="btn btn-secondary">
-        Second One
-      </button>
-      <div class="btn-group" role="group">
-        <button
-          id="dropdownId"
-          type="button"
-          class="btn btn-secondary dropdown-toggle"
-          data-bs-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          More
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownId">
-          <a class="dropdown-item" href="#">
-            First Dropdown
-          </a>
-          <a class="dropdown-item" href="#">
-            Second Dropdown
-          </a>
-        </div>
+    <div className="min-h-screen space-y-4">
+      <div className="grid md:grid-cols-2 gap-6">
+        <GuideFocusCard/>
+        <ActionPlan sessionCount={sessionCount}/>
       </div>
+      <PomodoTimer/>
     </div>
   );
 }
