@@ -43,7 +43,7 @@ export default function ProductivityInsightsPage() {
   return (
     <div className="space-y-4">
       <section className="rounded-2xl bg-white p-5 ring-1 ring-gray-200">
-        <h2 className="text-sm font-semibold text-gray-800">Insight Guide</h2>
+        <h2 className="text-sm font-semibold text-gray-800">Panduan Wawasan</h2>
         <p className="mt-2 text-sm text-gray-600">
           Lihat pola fokus dan penyelesaian task mingguan secara cepat.
         </p>
@@ -51,7 +51,7 @@ export default function ProductivityInsightsPage() {
 
       <section className="grid grid-cols-1 gap-4 xl:grid-cols-2">
         <article className="rounded-2xl bg-white p-5 ring-1 ring-gray-200">
-          <h3 className="text-sm font-semibold text-gray-800">Key Findings</h3>
+          <h3 className="text-sm font-semibold text-gray-800">Temuan Utama</h3>
           <ul className="mt-2 space-y-1 text-sm text-gray-600">
             {keyFindings.map((item) => (
               <li key={item}>• {item}</li>
@@ -60,7 +60,7 @@ export default function ProductivityInsightsPage() {
         </article>
 
         <article className="rounded-2xl bg-white p-5 ring-1 ring-gray-200">
-          <h3 className="text-sm font-semibold text-gray-800">Action Plan</h3>
+          <h3 className="text-sm font-semibold text-gray-800">Rencana Aksi</h3>
           <ul className="mt-2 space-y-1 text-sm text-gray-600">
             {actionPlan.map((item) => (
               <li key={item}>• {item}</li>

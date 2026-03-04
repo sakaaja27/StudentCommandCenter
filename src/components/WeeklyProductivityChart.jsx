@@ -83,7 +83,7 @@ export default function WeeklyProductivityChart() {
     <section className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gray-200">
       <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
         <div>
-          <h2 className="text-lg font-semibold text-gray-800">Weekly Productivity Chart</h2>
+          <h2 className="text-lg font-semibold text-gray-800">Chart Produktivitas Mingguan</h2>
           <p className="text-sm text-gray-500">Visualisasi produktivitas mingguan dengan data fokus dan task.</p>
         </div>
 

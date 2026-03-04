@@ -53,7 +53,7 @@ export default function TaskManagerProgress() {
     <section className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gray-200">
       <div className="mb-5 flex items-center justify-between">
         <div>
-          <h2 className="text-lg font-semibold text-gray-800">Task Manager</h2>
+          <h2 className="text-lg font-semibold text-gray-800">Manajer Tugas</h2>
           <p className="text-sm text-gray-500">Track task harian dan progres otomatis.</p>
         </div>
         <span className="rounded-lg bg-blue-50 px-3 py-1 text-sm font-medium text-blue-700">{progress}%</span>
@@ -71,7 +71,7 @@ export default function TaskManagerProgress() {
           type="submit"
           className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-blue-700"
         >
-          Add Task
+         Tambah Tugas
         </button>
       </form>
 
@@ -127,12 +127,12 @@ export default function TaskManagerProgress() {
             <span
               className={`rounded-full px-2 py-0.5 text-xs font-medium ${task.completed ? "bg-emerald-100 text-emerald-700" : "bg-amber-100 text-amber-700"}`}
             >
-              {task.completed ? "Done" : "Pending"}
+              {task.completed ? "Selesai" : "Pending"}
             </span>
             <button
               type="button"
               onClick={() => removeTask(task.id)}
-              className="ml-2 rounded-md px-2 py-1 text-xs text-gray-400 transition hover:bg-red-50 hover:text-red-600"
+              className="ml-2 rounded-md px-2 py-1 text-xs text-red-500 transition bg-red-100"
             >
               Hapus
             </button>

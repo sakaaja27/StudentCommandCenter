@@ -8,11 +8,11 @@ export default function Cta() {
       >
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-4xl font-bold">
-            Ready to Transform Your Academic Workflow?
+            Siap Mentransformasi Alur Kerja Akademik Anda?
           </h2>
 
           <p className="mt-4 text-white/80">
-            Experience the future of student productivity today.
+            Rasakan masa depan produktivitas mahasiswa hari ini.
           </p>
 
           <div className="mt-8">
@@ -20,7 +20,7 @@ export default function Cta() {
               to="/dashboard"
               className="px-8 py-4 rounded-xl bg-white text-black font-medium hover:opacity-90 transition"
             >
-              Launch Dashboard
+              Coba Sekarang
             </Link>
           </div>
         </div>

@@ -44,13 +44,13 @@ export default function Dashboard() {
   const currentMeta = metaByPath[location.pathname] ?? metaByPath["/dashboard/overview"]
 
   return (
-    <div className="flex min-h-screen w-full bg-gray-50">
+    <div className="flex min-h-screen w-full bg-gray-50 flex-col md:flex-row">
       <Sidebar menuItems={menuItems} />
 
       <div className="flex-1 flex flex-col">
         <Navbar title={currentMeta.title} subtitle={currentMeta.subtitle} />
 
-        <main className="p-6">
+        <main className="p-4 sm:p-6 overflow-y-auto">
           <Outlet />
         </main>
       </div>

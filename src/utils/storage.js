@@ -2,6 +2,8 @@ export const STORAGE_KEYS = {
   deadlines: "scc-study-deadlines",
   tasks: "scc-task-manager",
   ipkPlanner: "scc-ipk-planner", 
+  FocusMode: "scc-focus-mode",
+  pomodoTimer: "scc-pomodoro-timer",
 }
 
 const UPDATE_EVENT = "scc:data-updated"

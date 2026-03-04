@@ -18,22 +18,10 @@ export default function Landing() {
         </h1>
 
         <p className="mt-6 text-lg text-gray-600 max-w-2xl">
-          Organize tasks, track goals, and boost academic performance — all in
-          one intelligent dashboard.
+          AtherFlow menggabungkan task management, study planning, dan fokus mode dalam satu platform yang dirancang khusus untuk kebutuhan pelajar masa kini.
         </p>
 
-        <div className="mt-8 flex gap-4">
-          <Link
-            to="/dashboard"
-            className="px-6 py-3 rounded-lg bg-black text-white hover:opacity-80 transition"
-          >
-            Try Demo
-          </Link>
-
-          <button className="px-6 py-3 rounded-lg border border-gray-300 hover:bg-gray-100 transition">
-            Learn More
-          </button>
-        </div>
+        
       </section>
       <FeaturesLanding/>
       <PreviewLanding/>

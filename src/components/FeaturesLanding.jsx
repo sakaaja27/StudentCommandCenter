@@ -3,29 +3,30 @@ export default function FeaturesLanding() {
   const features = [
     {
       id: 1,
-      title: "Smart Task Manager",
-      description: "Organize assignments and deadlines effortlessly."
+      title: "Smart Task Management",
+      description: "Atur tugas dan tenggat waktu dengan mudah."
     },
     {
       id: 2,
       title: "Focus Mode",
-      description: "Built-in Pomodoro timer to maximize concentration."
+      description: "Timer Pomodoro bawaan untuk memaksimalkan konsentrasi."
     },
     {
       id: 3,
       title: "Progress Analytics",
-      description: "Visual insights into your academic performance."
+      description: "Wawasan visual tentang performa akademik Anda."
     }
+    
   ];
 
   return (
     <section id="features" className="py-24 bg-white">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <h2 className="text-4xl font-bold">
-          Everything You Need to Stay Productive
+          Semua yang Anda Butuhkan untuk Tetap Produktif
         </h2>
         <p className="mt-4 text-gray-600">
-          Designed to simplify your academic life.
+          Dirancang untuk menyederhanakan kehidupan akademik Anda.
         </p>
 
         <div className="mt-16 grid md:grid-cols-3 gap-8">

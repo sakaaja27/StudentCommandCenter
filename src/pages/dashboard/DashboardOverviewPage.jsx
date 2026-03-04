@@ -6,6 +6,7 @@ import {
   subscribeStorageUpdates,
 } from "../../utils/storage";
 import { hitungIPK } from "../../utils/IpkController";
+import WeeklyProductivityChart from "../../components/focus/weeklyproductivity";
 
 export default function DashboardOverviewPage() {
   const [tasks, setTasks] = useState(() => readStoredArray(STORAGE_KEYS.tasks));
@@ -108,7 +109,7 @@ export default function DashboardOverviewPage() {
 
       <section className="grid grid-cols-1 gap-4 xl:grid-cols-[1.2fr_1fr]">
         <article className="rounded-2xl bg-white p-5 ring-1 ring-gray-200">
-          <h3 className="text-sm font-semibold text-gray-800">Quick Notes</h3>
+          <h3 className="text-sm font-semibold text-gray-800">Catatan Cepat</h3>
           <p className="mt-2 text-sm text-gray-600">
             {metrics.nearestDeadline
               ? `Deadline terdekat: ${metrics.nearestDeadline.title} (${format(parseISO(metrics.nearestDeadline.deadline), "dd MMM")}).`
@@ -118,7 +119,7 @@ export default function DashboardOverviewPage() {
 
         <article className="rounded-2xl bg-white p-5 ring-1 ring-gray-200">
           <h3 className="text-sm font-semibold text-gray-800">
-            Today Checklist
+              Checklist Hari Ini
           </h3>
           <ul className="mt-2 space-y-1 text-sm text-gray-600">
             {todayChecklist.map((item) => (
@@ -127,6 +128,7 @@ export default function DashboardOverviewPage() {
           </ul>
         </article>
       </section>
+        <WeeklyProductivityChart />
     </div>
   );
 }

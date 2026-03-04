@@ -1,31 +1,100 @@
 import { useState, useEffect, useRef } from "react";
 import { DURASI_DEFAULT, formatTime } from "../../utils/PomodoroUtils";
-export default function PomodoTimer({sessionCount = 0, setSessionCount}) {
-  const [waktu, setWaktu] = useState(DURASI_DEFAULT);
-  const [aktif, setAktif] = useState(false);
+import {
+  STORAGE_KEYS,
+  readStoredArray,
+  writeStoredArray,
+} from "../../utils/storage";
+import { format } from "date-fns";
+
+export default function PomodoTimer({ sessionCount = 0, setSessionCount }) {
+  const todayKey = format(new Date(), "yyyy-MM-dd");
+
+  const [waktu, setWaktu] = useState(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEYS.pomodoTimer);
+      if (saved) {
+        const { waktu: savedWaktu, aktif, lastUpdate } = JSON.parse(saved);
+
+        if (aktif) {
+          const elapsed = Math.floor((Date.now() - lastUpdate) / 1000);
+          const newWaktu = Math.max(0, savedWaktu - elapsed);
+          return newWaktu;
+        }
+        return savedWaktu;
+      }
+    } catch (e) {
+      console.error("Error loading timer state:", e);
+    }
+    return DURASI_DEFAULT;
+  });
+
+  const [aktif, setAktif] = useState(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEYS.pomodoTimer);
+      if (saved) {
+        const { aktif: savedAktif } = JSON.parse(saved);
+        return savedAktif;
+      }
+    } catch (e) {
+      console.error("Error loading timer state:", e);
+    }
+    return false;
+  });
 
   const intervalRef = useRef(null);
 
   useEffect(() => {
-    if(!aktif) return;
+    const timerState = {
+      waktu,
+      aktif,
+      lastUpdate: Date.now(),
+    };
+    localStorage.setItem(STORAGE_KEYS.pomodoTimer, JSON.stringify(timerState));
+  }, [waktu, aktif]);
+
+  const simpanSesi = () => {
+    const existing = readStoredArray(STORAGE_KEYS.FocusMode);
+    const index = existing.findIndex((item) => item.date === todayKey);
+
+    if (index !== -1) {
+      existing[index].count += 1;
+    } else {
+      existing.push({ date: todayKey, count: 1 });
+    }
+
+    writeStoredArray(STORAGE_KEYS.FocusMode, existing);
+
+    setSessionCount((prev) => prev + 1);
+  };
+
+  useEffect(() => {
+    if (!aktif) return;
     if (aktif) {
       intervalRef.current = setInterval(() => {
         setWaktu((prev) => {
-          return prev > 1 ? prev -1 : 0
+          return prev > 1 ? prev - 1 : 0;
         });
       }, 1000);
     }
     return () => clearInterval(intervalRef.current);
   }, [aktif]);
 
-  useEffect(()  => {
+  useEffect(() => {
     if (waktu === 0 && aktif) {
-        typeof setSessionCount === "function" &&
-        setSessionCount((s) => s +1);
-        setAktif(false);
-        setWaktu(DURASI_DEFAULT);
+      setAktif(false);
+      clearInterval(intervalRef.current);
+      simpanSesi();
+      setWaktu(DURASI_DEFAULT);
     }
-  }, [waktu, aktif, setSessionCount])
+  }, [waktu, aktif, setSessionCount]);
+
+  useEffect(() => {
+    const existing = readStoredArray(STORAGE_KEYS.FocusMode);
+    const todayData = existing.find((item) => item.date === todayKey);
+
+    setSessionCount(todayData ? todayData.count : 0);
+  }, []);
 
   const start = () => setAktif(true);
   const pause = () => setAktif(false);

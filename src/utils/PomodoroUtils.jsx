@@ -1,4 +1,4 @@
-export const DURASI_DEFAULT = 30 * 60
+export const DURASI_DEFAULT = 0.2 * 60
 export function formatTime(totalseconds){
     const minutes = Math.floor(totalseconds / 60)
     const seconds = totalseconds % 60

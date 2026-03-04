@@ -22,13 +22,13 @@ export default function NavbarLanding() {
 
         <div className="hidden md:flex gap-8 text-sm text-gray-600">
           <a href="#features" className="hover:text-black transition">
-            Features
+            Fiture
           </a>
           <a href="#preview" className="hover:text-black transition">
-            Preview
+            Sekilas
           </a>
           <a href="#cta" className="hover:text-black transition">
-            Get Started
+            Coba Sekarang
           </a>
         </div>
 
@@ -36,7 +36,7 @@ export default function NavbarLanding() {
           to="/dashboard"
           className="px-5 py-2 rounded-lg bg-black text-white text-sm hover:opacity-80 transition"
         >
-          Try Demo
+          Coba Demo
         </Link>
       </div>
     </header>
