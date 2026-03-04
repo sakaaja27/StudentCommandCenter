@@ -11,6 +11,7 @@ export default function Dashboard() {
     { path: "/dashboard/task-tracker", label: "Task Tracker" },
     { path: "/dashboard/productivity-insights", label: "Productivity Insights" },
     { path: "/dashboard/IPK-Target", label: "IPK Target" },
+    { path: "/dashboard/Focus-Mode", label: "Focus Mode" },
   ]
 
   const metaByPath = {
@@ -34,6 +35,10 @@ export default function Dashboard() {
       title: "IPK Target",
       subtitle: "Kelola target IPK dengan mudah.",
     },
+    "/dashboard/Focus-Mode": {
+      title: "Focus Mode",
+      subtitle: "Fokus pada tugas dengan mode khusus.",
+    }
   }
 
   const currentMeta = metaByPath[location.pathname] ?? metaByPath["/dashboard/overview"]
