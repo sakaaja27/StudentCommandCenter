@@ -38,11 +38,11 @@ export default function StudyPlannerPage() {
           <p className="mt-1 text-2xl font-semibold text-gray-800">{plannerSummary.total}</p>
         </article>
         <article className="rounded-2xl bg-white p-4 ring-1 ring-gray-200">
-          <p className="text-xs text-gray-500">Upcoming</p>
+          <p className="text-xs text-gray-500">Deadline Terdekat</p>
           <p className="mt-1 text-2xl font-semibold text-gray-800">{plannerSummary.upcomingCount}</p>
         </article>
         <article className="rounded-2xl bg-white p-4 ring-1 ring-gray-200">
-          <p className="text-xs text-gray-500">Nearest</p>
+          <p className="text-xs text-gray-500">Tanggal Deadline Terdekat</p>
           <p className="mt-1 text-sm font-semibold text-gray-800">
             {plannerSummary.nearest ? format(parseISO(plannerSummary.nearest.deadline), "dd MMM yyyy") : "-"}
           </p>
@@ -50,7 +50,7 @@ export default function StudyPlannerPage() {
       </section>
 
       <section className="rounded-2xl bg-white p-5 ring-1 ring-gray-200">
-        <h2 className="text-sm font-semibold text-gray-800">Planner Guide</h2>
+        <h2 className="text-sm font-semibold text-gray-800">Panduan Planner</h2>
         <ul className="mt-2 space-y-1 text-sm text-gray-600">
           {plannerTips.map((item) => (
             <li key={item}>• {item}</li>

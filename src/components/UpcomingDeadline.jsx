@@ -1,7 +1,7 @@
 export default function UpcomingDeadline({ tasks = [] }) {
   return (
     <div className="bg-white p-6 rounded-2xl shadow mt-8">
-      <h2 className="text-lg font-semibold mb-4">Upcoming Deadlines</h2>
+      <h2 className="text-lg font-semibold mb-4">Deadline Terdekat</h2>
 
       <div className="space-y-3">
         {tasks
