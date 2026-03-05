@@ -86,18 +86,18 @@ export default function SmartStudyPlanner() {
   };
 
   return (
-    <section className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gray-200">
-      <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
+    <section className="rounded-2xl bg-white p-4 sm:p-6 shadow-sm ring-1 ring-gray-200">
+      <div className="mb-6 flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center justify-between gap-3">
         <div>
           <h2 className="text-lg font-semibold text-gray-800">
             Smart Study Planner
           </h2>
-          <p className="text-sm text-gray-500">
+          <p className="text-xs sm:text-sm text-gray-500">
             Kelola deadline tugas dalam kalender sederhana.
           </p>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1 sm:gap-2 w-full sm:w-auto">
           <button
             type="button"
             onClick={() =>
@@ -105,12 +105,12 @@ export default function SmartStudyPlanner() {
                 (prev) => new Date(prev.getFullYear(), prev.getMonth() - 1, 1),
               )
             }
-            className="rounded-lg border border-gray-200 px-3 py-1.5 text-sm text-gray-600 transition hover:bg-gray-100"
+            className="rounded-lg border border-gray-200 px-2 sm:px-3 py-1.5 text-xs sm:text-sm text-gray-600 transition hover:bg-gray-100"
           >
-            Sebelum
+            ◀ Sebelum
           </button>
-          <p className="min-w-32 text-center text-sm font-semibold text-gray-700">
-            {format(monthCursor, "MMMM yyyy")}
+          <p className="flex-1 sm:flex-none text-center text-xs sm:text-sm font-semibold text-gray-700">
+            {format(monthCursor, "MMM yyyy")}
           </p>
           <button
             type="button"
@@ -119,69 +119,70 @@ export default function SmartStudyPlanner() {
                 (prev) => new Date(prev.getFullYear(), prev.getMonth() + 1, 1),
               )
             }
-            className="rounded-lg border border-gray-200 px-3 py-1.5 text-sm text-gray-600 transition hover:bg-gray-100"
+            className="rounded-lg border border-gray-200 px-2 sm:px-3 py-1.5 text-xs sm:text-sm text-gray-600 transition hover:bg-gray-100"
           >
-            Selanjut
+            Selanjutnya ▶
           </button>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 xl:grid-cols-[2fr_1fr]">
+      <div className="grid grid-cols-1 gap-4 sm:gap-6 lg:grid-cols-[2fr_1fr]">
         <div>
           <form
             onSubmit={addDeadline}
-            className="mb-4 grid grid-cols-1 gap-3 md:grid-cols-[1.6fr_1fr_auto]"
+            className="mb-4 grid grid-cols-1 gap-2 sm:gap-3 sm:grid-cols-[1.6fr_1fr_auto]"
           >
             <input
               type="text"
               value={title}
               onChange={(event) => setTitle(event.target.value)}
               placeholder="Contoh: Laporan Matematika"
-              className="rounded-lg border border-gray-200 px-3 py-2 text-sm outline-none ring-blue-100 transition focus:ring-2"
+              className="rounded-lg border border-gray-200 px-3 py-2 text-xs sm:text-sm outline-none ring-blue-100 transition focus:ring-2"
             />
             <input
               type="date"
               value={deadline}
               onChange={(event) => setDeadline(event.target.value)}
-              className="rounded-lg border border-gray-200 px-3 py-2 text-sm outline-none ring-blue-100 transition focus:ring-2"
+              className="rounded-lg border border-gray-200 px-3 py-2 text-xs sm:text-sm outline-none ring-blue-100 transition focus:ring-2"
             />
             <button
               type="submit"
-              className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-blue-700"
+              className="rounded-lg bg-blue-600 px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium text-white transition hover:bg-blue-700 whitespace-nowrap"
             >
-              Tambah Deadline
+              Tambah
             </button>
           </form>
 
-          <div className="grid grid-cols-7 gap-2 text-center text-xs font-semibold uppercase tracking-wide text-gray-500">
-            {["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"].map((day) => (
-              <div key={day} className="rounded-lg bg-gray-50 py-2">
+          {/* Calendar Grid */}
+          <div className="grid grid-cols-7 gap-1 sm:gap-2 text-center text-[10px] sm:text-xs font-semibold uppercase tracking-wide text-gray-500">
+            {["Sen", "Sel", "Rab", "Kam", "Jum", "Sab", "Min"].map((day) => (
+              <div key={day} className="rounded-lg bg-gray-50 py-1.5 sm:py-2">
                 {day}
               </div>
             ))}
           </div>
 
-          <div className="mt-2 grid grid-cols-7 gap-2">
+          <div className="mt-1 sm:mt-2 grid grid-cols-7 gap-1 sm:gap-2">
             {gridDays.map((day) => {
               const dateKey = format(day, "yyyy-MM-dd");
               const hasDeadline = Boolean(deadlinesByDate[dateKey]?.length);
               return (
                 <div
                   key={dateKey}
-                  className={`min-h-20 rounded-xl border p-2 text-xs transition ${
+                  className={`min-h-16 sm:min-h-20 rounded-lg sm:rounded-xl border p-1 sm:p-2 text-[10px] sm:text-xs transition ${
                     isSameMonth(day, monthCursor)
                       ? "bg-white"
                       : "bg-gray-200 text-gray-400"
                   } ${hasDeadline ? "border-red-200 bg-red-50" : "border-gray-200"}`}
                 >
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between gap-1">
                     <span
                       className={`font-semibold ${isSameDay(day, new Date()) ? "text-blue-600" : "text-gray-700"}`}
                     >
                       {format(day, "d")}
                     </span>
                     {hasDeadline && (
-                      <span className="rounded-full bg-red-500 px-2 py-0.5 text-[10px] font-semibold text-white">
+                      <span className="rounded-full bg-red-500 px-1.5 sm:px-2 py-0.5 text-[8px] sm:text-[10px] font-semibold text-white flex-shrink-0">
                         {deadlinesByDate[dateKey].length}
                       </span>
                     )}
@@ -192,7 +193,7 @@ export default function SmartStudyPlanner() {
                       onClick={() =>
                         setSelectedDeadline(deadlinesByDate[dateKey][0])
                       }
-                      className="mt-2 line-clamp-2 w-full rounded-md bg-red-100 px-1.5 py-1 text-[10px] font-medium text-red-700 transition hover:bg-red-200 cursor-pointer text-left"
+                      className="mt-1 line-clamp-2 w-full rounded-md bg-red-100 px-1 sm:px-1.5 py-0.5 sm:py-1 text-[8px] sm:text-[10px] font-medium text-red-700 transition hover:bg-red-200 cursor-pointer text-left"
                     >
                       {deadlinesByDate[dateKey][0].title}
                     </button>
@@ -203,13 +204,13 @@ export default function SmartStudyPlanner() {
           </div>
         </div>
 
-        <aside className="rounded-xl border border-gray-200 bg-gray-50 p-4">
-          <h3 className="text-sm font-semibold text-gray-800">
+        <aside className="rounded-xl border border-gray-200 bg-gray-50 p-3 sm:p-4">
+          <h3 className="text-xs sm:text-sm font-semibold text-gray-800">
             3 Deadline Terdekat
           </h3>
           <div className="mt-3 space-y-2">
             {upcomingTasks.length === 0 && (
-              <p className="text-sm text-gray-500">
+              <p className="text-xs sm:text-sm text-gray-500">
                 Belum ada deadline yang akan datang.
               </p>
             )}
@@ -217,21 +218,21 @@ export default function SmartStudyPlanner() {
             {upcomingTasks.map((item) => (
               <div
                 key={item.id}
-                className="rounded-lg border border-gray-200 bg-white p-3"
+                className="rounded-lg border border-gray-200 bg-white p-2 sm:p-3"
               >
                 <div className="flex items-start justify-between gap-2">
-                  <div>
-                    <p className="text-sm font-medium text-gray-700">
+                  <div className="min-w-0 flex-1">
+                    <p className="text-xs sm:text-sm font-medium text-gray-700 line-clamp-2">
                       {item.title}
                     </p>
-                    <p className="mt-1 text-xs text-red-600">
+                    <p className="mt-1 text-[10px] sm:text-xs text-red-600">
                       {format(parseISO(item.deadline), "dd MMM yyyy")}
                     </p>
                   </div>
                   <button
                     type="button"
                     onClick={() => removeDeadline(item.id)}
-                    className="rounded-md px-2 py-1 text-xs  transition bg-red-50 text-red-600"
+                    className="rounded-md px-1.5 sm:px-2 py-1 text-[10px] sm:text-xs transition bg-red-50 text-red-600 hover:bg-red-100 flex-shrink-0"
                   >
                     Hapus
                   </button>
@@ -243,23 +244,27 @@ export default function SmartStudyPlanner() {
       </div>
 
       {selectedDeadline && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
-          <div className="w-full max-w-sm rounded-3xl bg-white p-8 shadow-2xl">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4">
+          <div className="w-full max-w-sm rounded-3xl bg-white p-6 sm:p-8 shadow-2xl">
             <h3 className="text-lg font-semibold text-gray-800">
               Detail Deadline
             </h3>
 
             <div className="mt-6 space-y-4">
               <div>
-                <p className="text-sm font-medium text-gray-600">Title</p>
-                <p className="mt-2 text-gray-800">{selectedDeadline.title}</p>
+                <p className="text-xs sm:text-sm font-medium text-gray-600">
+                  Title
+                </p>
+                <p className="mt-2 text-sm sm:text-base text-gray-800">
+                  {selectedDeadline.title}
+                </p>
               </div>
 
               <div>
-                <p className="text-sm font-medium text-gray-600">
+                <p className="text-xs sm:text-sm font-medium text-gray-600">
                   Tanggal Deadline
                 </p>
-                <p className="mt-2 text-red-600 font-semibold">
+                <p className="mt-2 text-sm sm:text-base text-red-600 font-semibold">
                   {format(parseISO(selectedDeadline.deadline), "dd MMMM yyyy")}
                 </p>
               </div>
@@ -269,7 +274,7 @@ export default function SmartStudyPlanner() {
               <button
                 type="button"
                 onClick={() => setSelectedDeadline(null)}
-                className="flex-1 rounded-xl bg-gray-200 px-4 py-2 font-medium text-gray-700 transition hover:bg-gray-300"
+                className="flex-1 rounded-xl bg-gray-200 px-4 py-2 text-xs sm:text-sm font-medium text-gray-700 transition hover:bg-gray-300"
               >
                 Tutup
               </button>
@@ -279,7 +284,7 @@ export default function SmartStudyPlanner() {
                   removeDeadline(selectedDeadline.id);
                   setSelectedDeadline(null);
                 }}
-                className="flex-1 rounded-xl bg-red-600 px-4 py-2 font-medium text-white transition hover:bg-red-700"
+                className="flex-1 rounded-xl bg-red-600 px-4 py-2 text-xs sm:text-sm font-medium text-white transition hover:bg-red-700"
               >
                 Hapus
               </button>
